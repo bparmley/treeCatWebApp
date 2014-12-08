@@ -36,11 +36,9 @@ npm install
 npm start
 ```
 
-Browse to the WebApp at `http://localhost:8000/app/index.html`.
+Browse to the WebApp at `http://localhost:8000/app/`.
 
 ## Contact
-
-
 
 For detailed information regarding the angular-seed base used in this WebApp visit [https://github.com/angular/angular-seed](https://github.com/angular/angular-seed)
 

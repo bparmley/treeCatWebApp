@@ -1,0 +1,41 @@
+<div ng-controller="ListCtrl">
+    <p>Search: <input ng-model="query"></p>
+    <p>Sort by: 
+        <select ng-model="orderProp">
+            <option value="cname">Common Name</option>
+            <option value="sname">Scientific Name</option>
+            <option value="-width">Widest</option>
+        	<option value="width">Skiniest</option>
+        </select>
+    </p>
+    <div class="well" ng-repeat="tree in trees | filter:query | orderBy:orderProp" ng-if="tree.type == 'Mid'">
+        <h2>{{tree.cname}}</h2>
+        
+        
+        <div class="row">
+            <div class="col-sm-3 col-md-2">
+                <img ng-src="{{tree.image}}" alt="{{tree.cname}}">
+            </div>
+            <div class="col-sm-9 col-md-10">
+                <dl>
+                    <dt>Scientific Name:</dt>
+                    <dd>{{tree.sname}}</dd>
+                    <dt>Size:</dt>
+                    <dd>{{tree.size}} (height X width)</dd>
+                    <dt>Drought Tolerance:</dt>
+                    <dd>{{tree.tolerance}}</dd>
+                    <dt>Native Plant:</dt>
+                    <dd>{{tree.native}}</dd>
+                    <dt>Fall Color:</dt>
+                    <dd>{{tree.fcolor}}</dd>
+                    <dt>Edible Fruit:</dt>
+                    <dd>{{tree.fruit}}</dd>
+                    <dt>Growth Rate:</dt>
+                    <dd>{{tree.growth}}</dd>
+                </dl>
+            </div>
+        </div>
+        <p>{{tree.comments}}</p>
+        <p><a ng-href="{{tree.link}}" target="_blank">{{tree.link}}</a></p>
+	</div>
+</div>
